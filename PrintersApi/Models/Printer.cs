@@ -5,6 +5,6 @@ public class Printer
     public string? Local { get; set; }
     public string? Setor { get; set; }
     public string? Senha { get; set; }
-    public int SelbId { get; set; }
     public string? Nome { get; set; }
+    public ICollection<Selb>? Selbs { get; set; }
 }

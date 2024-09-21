@@ -29,7 +29,6 @@ public static class PrinterEndpoints
             printer.Local = printerAtualizada.Local;
             printer.Setor = printerAtualizada.Setor;
             printer.Senha = printerAtualizada.Senha;
-            printer.SelbId = printerAtualizada.SelbId;
             printer.Nome = printerAtualizada.Nome;
 
             await dbContext.SaveChangesAsync();

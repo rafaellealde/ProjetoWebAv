@@ -6,7 +6,7 @@ public static class TonnerEndpoints
 {
     public static void MapTonnerEndpoints(this IEndpointRouteBuilder routes)
     {
-        routes.MapGet("/tonners", async (AppDbContext dbContext) => await dbContext.Printers.ToListAsync());
+        routes.MapGet("/tonners", async (AppDbContext dbContext) => await dbContext.Tonners.ToListAsync());
 
         routes.MapGet("/tonners/{id}", async (int id, AppDbContext dbContext) => await dbContext.Tonners.FindAsync(id)
             is Tonner tonner
@@ -28,7 +28,6 @@ public static class TonnerEndpoints
             tonner.Printer = tonnerAtualizado.Printer;
             tonner.Tipo = tonnerAtualizado.Tipo;
             tonner.Cor = tonnerAtualizado.Cor;
-            tonner.SelbId = tonnerAtualizado.SelbId;
 
             await dbContext.SaveChangesAsync();
             return Results.NoContent();
